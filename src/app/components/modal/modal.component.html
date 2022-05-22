@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-capitalize">Prices list</ion-title>
+    <ion-icon name='close-circle' (click)='dismiss()' class="ion-padding" style='float: right; padding: 1rem; font-size: 30px; cursor: pointer;'></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12">
+
+        <ion-card>
+          <ion-card-content>
+
+            </ion-card-content>
+
+            <ion-list>
+              <ion-item lines="none">
+               <ion-title class="ion-text-center ion-text-capitalize">Current list ▾</ion-title>
+              </ion-item>
+              </ion-list>
+
+
+            </ion-card>
+
+            </ion-col>
+
+
+
+            <ion-col size-md="12">
+
+              <ion-card>
+
+                <ion-card-header color="primary">
+
+                  <ion-card-title>
+                      <ion-item color="primary" lines="none">
+                       <ion-title class="ion-text-center ion-text-capitalize">Measurements ▾</ion-title>
+                      </ion-item>
+                  </ion-card-title>
+
+                </ion-card-header>
+
+                <ion-card-content>
+
+
+
+        <table class="table  table-hover table-bordered table-responsive-md table-responsive-sm table-responsive-md table-responsive-lg tab-bar-translucent">
+
+          <thead>
+
+            <tr class="list-number">
+
+              <th class="ion-text-uppercase"></th>
+              <th class="ion-text-uppercase">Room Name</th>
+              <th class="ion-text-uppercase">Length <br> <span class=" ion-text-lowercase">(inches)</span></th>
+              <th class="ion-text-uppercase">Width <br> <span class=" ion-text-lowercase">(inches)</span></th>
+              <th class="ion-text-uppercase">QTY <br> <span class=" ion-text-lowercase">(tiles)</span></th>
+              <th class="ion-text-uppercase">Price</th>
+              <th class="ion-text-uppercase">Wolkmanship</th>
+              <th class="ion-text-uppercase">Size</th>
+              <th class="ion-text-uppercase">Extra</th>
+              <th class="ion-text-uppercase">Total</th>
+
+
+
+            </tr>
+
+
+          </thead>
+
+          <tbody>
+
+            <tr *ngFor="let room of roomList | keyvalue; let i = index">
+
+              <td class="ion-text-capitalize list-number">{{i+1}}</td>
+              <td class="ion-text-uppercase">{{ room.value['value']?.rName }} </td>
+              <td class="ion-text-uppercase">{{ room.value['value']?.rLength }}</td>
+
+              <td class="ion-text-uppercase">{{ room.value['value']?.rWidth }}</td>
+
+              <td class="ion-text-capitalize">{{ room.value['value']?.res }}</td>
+
+              <td class="ion-text-capitalize"></td>
+
+              <td class="ion-text-capitalize"> </td>
+              <td class="ion-text-capitalize">{{ room.value['value']?.tSize }}</td>
+              <td class="ion-text-capitalize">{{ room.value['value']?.tRecomended }}</td>
+
+              <td class="ion-text-capitalize total-list"></td>
+
+              <td class="ion-text-capitalize delete-list" style="cursor: pointer;" (click)="deleteItem(room.key)"><i class="fas fa-trash-alt text-danger fa-2x"></i></td>
+
+            </tr>
+
+          </tbody>
+
+
+
+        </table>
+
+
+                </ion-card-content>
+
+
+
+
+                  </ion-card>
+
+                  </ion-col>
+
+
+          </ion-row>
+
+        </ion-grid>
+     </ion-content>

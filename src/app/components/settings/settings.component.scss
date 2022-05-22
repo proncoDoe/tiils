@@ -1,0 +1,60 @@
+
+
+.btn{
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+
+}
+
+
+
+@media(max-width:768px) {
+
+  .btn-group {
+
+    display: block;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+  }
+
+}
+
+
+.title-project{
+
+  width: 50vw !important;
+  text-align: center !important;
+  justify-content: center;
+  justify-items: center;
+
+
+}
+
+
+@media(max-width: 768px){
+
+  .title-project{
+  width: 100vw !important;
+  }
+
+}
+
+
+
+
+   .title-input{
+
+    background: rgba(188, 204, 154, 0.49) !important;
+
+  }
+
+

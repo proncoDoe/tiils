@@ -1,0 +1,345 @@
+
+<ion-header [translucent]="true">
+
+  <ion-toolbar color="primary">
+  <div class="row  justify-content-between">
+
+    <div class="col">
+      <a routerLink="/home">
+
+          <ion-fab-button>
+            <i class="fas fa-times text-danger"></i>
+          </ion-fab-button>
+
+  </a>
+
+    </div>
+
+
+    <div class="col my-3">
+
+        Add New Project
+
+    </div>
+
+
+
+    <div class="col-2">
+
+      <a routerLink="/settings">
+        <ion-fab-button>
+          <ion-icon name="settings-outline"></ion-icon>
+        </ion-fab-button>
+      </a>
+
+    </div>
+
+  </div>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+
+
+   <ion-col  size-md="10">
+
+
+             <ion-row>
+
+              <ion-col size-md="6" offset-md="5">
+
+
+                <ion-card class="ion-padding-top">
+
+
+                  <div class="ion-text-center">
+
+
+                    <ion-label class="ion-text-lg-capitalize" color="primary">
+
+
+                        </ion-label>
+
+
+                  </div>
+
+
+                  <ion-card-content>
+
+                <ion-row>
+
+
+                  <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                    <span class="btn ion-text-capitalize myl-5 title-input">
+                      Project name
+
+                     </span>
+
+                  <ion-col>
+                    <ion-item>
+                      <!-- <ion-label position="floating">Project name</ion-label> -->
+                      <ion-input type="text" [(ngModel)]="projectName"  required></ion-input>
+                    </ion-item>
+
+                  </ion-col>
+
+                </div>
+
+
+
+                </ion-row>
+
+                <ion-row>
+
+
+                  <div class="btn-group my-2 shadow-lg rounded btn-bock title-project" data-toggle="buttons">
+
+
+                    <span class="btn ion-text-capitalize myl-5 title-input">
+                      Address
+
+                     </span>
+
+                  <ion-col>
+
+
+                    <ion-item>
+                      <!-- <ion-label position="floating">Address name</ion-label> -->
+                      <ion-input type="text" [(ngModel)]="addressName" required></ion-input>
+                    </ion-item>
+
+                  </ion-col>
+
+                </div>
+
+
+
+                </ion-row>
+
+
+                <ion-row>
+
+
+                  <div class="btn-group my-2 shadow-lg rounded btn-bock title-project" data-toggle="buttons">
+
+
+                    <span class="btn ion-text-capitalize myl-5 title-input">
+                      client name
+
+                     </span>
+
+                  <ion-col>
+
+
+                    <ion-item>
+                      <!-- <ion-label position="floating">Client name</ion-label> -->
+                      <ion-input type="text" [(ngModel)]="clientName"  required></ion-input>
+                    </ion-item>
+
+                  </ion-col>
+
+                </div>
+
+
+
+                </ion-row>
+
+
+                <ion-row>
+
+
+                  <div class="btn-group my-2 shadow-lg rounded btn-bock title-project" data-toggle="buttons">
+
+
+                    <span class="btn ion-text-capitalize myl-5 title-input">
+                      Project Date
+
+                     </span>
+
+                  <ion-col>
+
+
+                    <ion-item>
+                      <!-- <ion-label position="floating">Client name</ion-label> -->
+                      <ion-datetime [(ngModel)]="pDate"  displayFormat="D MMM YYYY H:mm" required></ion-datetime>
+                    </ion-item>
+
+                  </ion-col>
+
+                </div>
+
+
+
+                </ion-row>
+
+
+                <ion-button class="ion-margin" expand="block" (click)="add()">Save</ion-button>
+
+                  </ion-card-content>
+                    </ion-card>
+
+
+              </ion-col>
+
+
+             </ion-row>
+
+
+
+    </ion-col>
+
+      </ion-row>
+      </ion-grid>
+
+
+
+      <hr class="line">
+
+
+      <div class="container-fluid justify-content-between">
+
+
+        <div class="row">
+
+          <div class="col-10">
+
+            <ion-title class="my-3">
+
+            </ion-title>
+
+          </div>
+
+          <div class="col-2">
+
+            <ion-fab vertical="top" horizontal="end" slot="fixed">
+            <a routerLink="/add-room">
+              <ion-fab-button color="tertiary">
+                <ion-icon name="add"></ion-icon>
+              </ion-fab-button>
+            </a>
+            </ion-fab>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+
+
+   <ion-col  size-md="10">
+
+
+             <ion-row>
+
+              <ion-col size-md="6" offset-md="5">
+
+
+                <ion-card class="ion-padding-top">
+
+
+
+                  <div class="ion-text-center">
+
+
+                    <ion-label class="ion-text-lg-capitalize" color="primary">
+                          <h1>Measurements</h1>
+
+                        </ion-label>
+
+
+                  </div>
+
+                  <ion-card-content>
+
+        <table class="table  table-hover table-bordered table-responsive-md table-responsive-sm tab-bar-translucent">
+
+          <thead>
+
+            <tr class="table-list">
+
+              <th class="ion-text-uppercase">s/n</th>
+              <th class="ion-text-uppercase">Room Name</th>
+              <th class="ion-text-uppercase">QTY <br> <span class="ion-text-lowercase">(tiles)</span></th>
+              <th class="ion-text-uppercase">Workmanship</th>
+              <th class="ion-text-uppercase">Size</th>
+              <th class="ion-text-uppercase">Extras</th>
+              <th class="ion-text-uppercase">Price</th>
+              <th class="ion-text-uppercase total-list">Total</th>
+
+            </tr>
+
+
+          </thead>
+
+          <tbody>
+
+            <tr *ngFor="let room of roomList | keyvalue; let i = index">
+
+              <td class="ion-text-capitalize list-number" (click)="presentModal()">{{i+1}} </td>
+              <td class="ion-text-uppercase" (click)="presentModal()">{{ room.value['value']?.rName }} </td>
+
+              <td class="ion-text-capitalize" (click)="presentModal()">{{room.value['value']?.res }}</td>
+
+              <td (click)="presentModal()"></td>
+
+              <td class="ion-text-capitalize" (click)="presentModal()">{{ room.value['value']?.itemCategory }}</td>
+
+              <td class="ion-text-capitalize" (click)="presentModal()">{{ room.value['value']?.tRecomended }}</td>
+
+              <td class="ion-text-capitalize" (click)="presentModal()"></td>
+
+              <td class="ion-text-capitalize total-list" (click)="presentModal()"></td>
+
+              <!-- <td class="ion-text-capitalize delete"><a routerLink="/add" class="text-danger ml-4"><i class="fas fa-trash-alt fa-2x"></i></a></td> -->
+            </tr>
+
+          </tbody>
+
+
+
+        </table>
+
+
+
+                  </ion-card-content>
+
+                    </ion-card>
+
+
+              </ion-col>
+
+
+             </ion-row>
+
+
+
+    </ion-col>
+
+      </ion-row>
+      </ion-grid>
+      </ion-content>
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+

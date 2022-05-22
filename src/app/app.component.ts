@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AddRoomService } from './add-room.service';
+import { DataService } from './data.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(public addroomservice: AddRoomService,public dataservice: DataService) {
+
+// this.dataservice.init();
+//     this.addroomservice.init();
+
+  }
 }

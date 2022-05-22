@@ -1,0 +1,121 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+     <ion-item lines="none">
+      <ion-label class="text-center" style="font-weight: 800;font-size: 3em;">
+        Today
+       <p style="font-weight: 400;color: #433465 ;">{{today | date:'fullDate'}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+
+    <div class="row  justify-content-between">
+
+      <div class="col-10">
+        <a routerLink="/settings">
+
+            <ion-fab-button>
+              <ion-icon name="settings-outline"></ion-icon>
+            </ion-fab-button>
+
+    </a>
+
+      </div>
+
+      <div class="col-2">
+
+        <a routerLink="/add">
+          <ion-fab-button color="tertiary">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </ion-toolbar>
+</ion-header>
+
+
+   <div class="container">
+
+   <div class="row my-3 justify-content-center">
+
+    <div class="col-2">
+
+    </div>
+
+
+    <div class="col">
+
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+
+      <div class="fontsearch">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="example">
+        <ion-input type="text" [(ngModel)]="searchForm.search" name="search" placeholder="Search.." required></ion-input>
+        <i class="fa fa-search"></i>
+      </form>
+    </div>
+
+    </div>
+
+
+   </div>
+
+
+   </div>
+
+   <ion-content>
+
+<ion-grid>
+  <ion-row class="container justify-content-center">
+
+          <div *ngFor="let project of projectList | keyvalue; let i = index" class="btn-group my-2 shadow-lg rounded">
+
+            <div class="mr-5 title-link rounded">
+
+                <ion-item button class="my-4  text-light" (click)="deleteItem(project.key)">
+                    <ion-icon color="danger" class=" ion-padding" name="trash-outline"></ion-icon>
+              </ion-item>
+
+            </div>
+
+            <div class="btn btn-lg  btn-bock title-project">
+             <div class="my-3 text-center" (click)="presentModal()">{{ project.value['value']?.pName }}</div>
+
+             <h4 class="ion-text-left"> <small class=""> {{ project.value['value']?.prjDate | date:'medium' }}</small></h4>
+
+            </div>
+
+            <div class="title-link btn btn-share rounded">
+
+              <div>
+                <div class="my-4 text-light"> <a routerLink="/invoice" class="text-light text-color">
+
+                    Generate <br /> Invoice
+
+                </a></div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+  </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+
+<app-footer></app-footer>

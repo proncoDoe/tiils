@@ -1,0 +1,358 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+
+
+      <div class="row justify-content-between">
+
+        <div class="col my-4 ml-5">
+
+            <a routerLink="/home">
+
+              <ion-fab-button>
+                <i class="fas fa-chevron-left fa-2x text-light"></i>
+              </ion-fab-button>
+
+
+        </a>
+
+
+        </div>
+
+        <div class="col my-4">
+
+            Settings
+
+        </div>
+
+        <div class="col">
+
+          <span><img src="../../../assets/images/testimonial-author1.jpg" class=" rounded-pill img-thumbnail shadow-lg"></span>
+
+        </div>
+
+      </div>
+
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+
+
+   <ion-col  size-md="12">
+
+
+             <ion-row>
+
+              <ion-col size-md="8" offset-md="3">
+
+
+                <ion-card class="ion-padding-top">
+
+
+                  <div class="ion-text-center">
+
+
+                    <ion-label class="ion-text-lg-capitalize" color="primary">
+
+
+                        </ion-label>
+
+                  </div>
+
+
+                  <ion-card-content>
+
+                      <div class="container">
+
+                      <ion-row>
+
+                        <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+                         <span class="btn ion-text-capitalize myl-5 title-input">
+
+                            Company Name
+
+                         </span>
+
+                        <ion-col>
+
+
+                          <ion-item>
+                            <!-- <ion-label position="floating">Ventis Inc</ion-label> -->
+                            <ion-input type="text" [(ngModel)]="companyName" name="companyName" required></ion-input>
+                          </ion-item>
+
+                        </ion-col>
+
+                      </div>
+
+                      </ion-row>
+
+                      <ion-row>
+
+                        <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                          <span class="btn ion-text-capitalize myl-5 title-input">
+                         Address
+
+                           </span>
+
+                        <ion-col>
+
+
+                          <ion-item>
+                            <!-- <ion-label position="floating">Delta state...</ion-label> -->
+                            <ion-input type="text" [(ngModel)]="address" name="address" required></ion-input>
+                          </ion-item>
+
+                        </ion-col>
+
+                      </div>
+
+                      </ion-row>
+
+
+                      <ion-row>
+
+
+                        <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+                          <span class="btn ion-text-capitalize myl-5 title-input">
+                            Director Name
+
+                           </span>
+
+                        <ion-col>
+
+
+                          <ion-item>
+                            <!-- <ion-label position="floating">John Doe</ion-label> -->
+                            <ion-input type="text" [(ngModel)]="directorName" name="directorName" required></ion-input>
+                          </ion-item>
+
+                        </ion-col>
+
+                      </div>
+
+                      </ion-row>
+
+
+
+                      <ion-row>
+
+                        <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+                          <span class="btn ion-text-capitalize myl-5 title-input">
+                          Company logo
+
+                           </span>
+
+                        <ion-col class="">
+
+
+                            <ion-icon lazy="true" slot="start"></ion-icon>
+                          <!-- <ion-label slot="end">Upload Image</ion-label> -->
+                          <input type="file" (change)="loadImageFromDevice($event)" name="image" id="file-input"
+                            accept="image/png, image/jpeg">
+
+                        </ion-col>
+
+                      </div>
+
+                      </ion-row>
+
+
+
+                      </div>
+                      <br>
+
+
+                      <h2 class="ion-text-capitalize my-2 font-weight-bold">tiles breakdown</h2> <br>
+
+
+
+                     <div class="container">
+
+                      <div class="container">
+
+
+                        <ion-row>
+
+
+                          <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                            <span class="btn ion-text-capitalize myl-5 title-input">
+                            40 By 40
+
+                             </span>
+
+                          <ion-col>
+
+
+                            <ion-item>
+                              <!-- <ion-label position="floating">#250</ion-label> -->
+                              <ion-input type="text" [(ngModel)]="size40by40" name="size40by40" required></ion-input>
+                            </ion-item>
+
+                          </ion-col>
+
+                        </div>
+
+
+
+                        </ion-row>
+
+
+
+
+                        <ion-row>
+
+
+                          <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                            <span class="btn ion-text-capitalize myl-5 title-input">
+                          60 By 60
+
+                             </span>
+
+                          <ion-col>
+
+
+                            <ion-item>
+                              <!-- <ion-label position="floating">#250</ion-label> -->
+                              <ion-input type="text" [(ngModel)]="size60by60" name="size60by60" required></ion-input>
+                            </ion-item>
+
+                          </ion-col>
+
+                        </div>
+
+
+
+                        </ion-row>
+
+
+                        <ion-row>
+
+                          <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                            <span class="btn ion-text-capitalize myl-5 title-input">
+                              25 By 40
+
+                             </span>
+
+                          <ion-col>
+
+
+                            <ion-item>
+                              <!-- <ion-label position="floating">#200</ion-label> -->
+                              <ion-input type="text" [(ngModel)]="size25by40" name="size25by40" required></ion-input>
+                            </ion-item>
+
+                          </ion-col>
+
+                        </div>
+
+                        </ion-row>
+
+
+                        <ion-row>
+
+                          <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                            <span class="btn ion-text-capitalize myl-5 title-input">
+                            30 By 60
+
+                             </span>
+
+                          <ion-col>
+
+
+                            <ion-item>
+                              <!-- <ion-label position="floating">#200</ion-label> -->
+                              <ion-input type="text" [(ngModel)]="size30by60" name="size30by60" required></ion-input>
+                            </ion-item>
+
+                          </ion-col>
+
+                        </div>
+
+                        </ion-row>
+
+
+                        <ion-row>
+
+                          <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                            <span class="btn ion-text-capitalize myl-5 title-input">
+                          Workmanship
+
+                             </span>
+
+                          <ion-col>
+
+
+                            <ion-item>
+                              <!-- <ion-label position="floating">Workmanship</ion-label> -->
+                              <ion-input type="text"  [(ngModel)]="workManShip" name="workManShip" required></ion-input>
+                            </ion-item>
+
+                          </ion-col>
+
+                        </div>
+
+                        </ion-row>
+
+
+                      </div>
+
+                     </div>
+                     <ion-button class="ion-margin" expand="block" (click)="adSetting()">Save</ion-button>
+
+
+                  </ion-card-content>
+                    </ion-card>
+
+
+              </ion-col>
+
+
+             </ion-row>
+
+
+
+    </ion-col>
+
+      </ion-row>
+      </ion-grid>
+
+
+
+      <hr class="line">
+
+
+</ion-content>
+
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+

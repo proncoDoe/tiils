@@ -1,0 +1,261 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+
+
+    <div class="row  justify-content-between">
+
+      <div class="col">
+        <a routerLink="/add">
+
+          <ion-fab-button>
+            <i class="fas fa-times text-danger"></i>
+          </ion-fab-button>
+
+  </a>
+
+
+      </div>
+
+      <div class="col my-3">
+        Add Room
+    </div>
+
+    <div class="col-2">
+
+      <a routerLink="/settings">
+        <ion-fab-button>
+          <ion-icon name="settings-outline"></ion-icon>
+        </ion-fab-button>
+      </a>
+
+    </div>
+
+  </div>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+
+
+   <ion-col  size-md="10">
+
+
+             <ion-row>
+
+              <ion-col size-md="6" offset-md="5">
+
+                <ion-card class="ion-padding-top">
+
+                  <div class="ion-text-center">
+
+                    <ion-label class="ion-text-lg-capitalize" color="primary">
+
+                        </ion-label>
+
+
+                  </div>
+
+
+                  <ion-card-content>
+
+                      <ion-row>
+
+
+                        <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                          <span class="btn ion-text-capitalize myl-5 title-input">
+                           Room Name
+
+                           </span>
+
+                        <ion-col>
+
+
+                          <ion-item>
+                            <!-- <ion-label position="floating">Room Name</ion-label> -->
+                            <ion-input type="text" [(ngModel)]="roomName" required></ion-input>
+                          </ion-item>
+
+                        </ion-col>
+
+                      </div>
+
+
+
+                      </ion-row>
+
+                      <ion-row>
+
+
+                        <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                          <span class="btn ion-text-capitalize myl-5 title-input">
+                            Room length
+
+                           </span>
+
+                        <ion-col>
+
+
+                          <ion-item>
+                            <!-- <ion-label position="floating">Enter room length</ion-label> -->
+                            <ion-input type="text" [(ngModel)]="roomLenght" required></ion-input>
+                          </ion-item>
+
+                        </ion-col>
+
+                      </div>
+
+
+
+                      </ion-row>
+
+
+                      <ion-row>
+
+
+                        <div class="btn-group my-2 shadow-lg rounded btn-bock title-project">
+
+
+                          <span class="btn ion-text-capitalize myl-5 title-input">
+                           Room width
+
+                           </span>
+
+                        <ion-col>
+
+                          <ion-item>
+                            <!-- <ion-label position="floating">Enter room width</ion-label> -->
+                            <ion-input type="text" [(ngModel)]="roomWidth" required></ion-input>
+                          </ion-item>
+
+                        </ion-col>
+
+                      </div>
+
+
+
+                      </ion-row>
+
+                      <!-- <ion-row>
+
+
+                        <div class="btn-group my-2 shadow-lg rounded btn-bock title-project" data-toggle="buttons">
+
+
+                          <span class="btn ion-text-capitalize myl-5 title-input">
+                           Size
+
+                           </span>
+
+                        <ion-col>
+
+                          <ion-item>
+                            <ion-label>Select</ion-label>
+                            <ion-select  [(ngModel)]="size" required>
+                              <ion-select-option value="40By40">40By40</ion-select-option>
+                              <ion-select-option value="60By60">60By60</ion-select-option>
+                              <ion-select-option value="25By40">25By40</ion-select-option>
+                              <ion-select-option value="30By60">30By60</ion-select-option>
+                            </ion-select>
+                          </ion-item>
+
+
+                        </ion-col>
+
+                      </div>
+
+                      </ion-row> -->
+
+
+                      <ion-item>
+
+
+                        <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+                        <ion-label>Select type of tiles size below</ion-label>
+                        <span [style.color]="taskCategory === '40By40' ? 'red' : (taskCategory === '60By60' ?  'green' : taskCategory === '25By40' ?  'blue' : 'orange')">{{taskCategory}}</span>
+                      </ion-item>
+
+
+                      <ion-item>
+                        <ion-chip  *ngFor="let category of categories; let i = index" color="secondary" outline="true" (click)="selectedCategory(i)">
+                          <ion-label color="secondary">{{category}}</ion-label>
+                        </ion-chip>
+
+                        <ion-chip color="primary" outline="true">
+                          <ion-label color="secondary">new</ion-label>
+                          <ion-button fill="clear">
+                            <ion-icon slot="icon-only" name="bed-outline"></ion-icon>
+                          </ion-button>
+                        </ion-chip>
+                      </ion-item>
+
+
+
+                      <ion-row>
+
+                        <div class="btn-group my-2 shadow-lg rounded btn-bock title-project" data-toggle="buttons">
+
+                          <span class="btn ion-text-capitalize myl-5 title-input">
+                           Extras &nbsp; <small>(recommended)</small>
+
+                           </span>
+
+                        <ion-col>
+
+                          <ion-item>
+                            <ion-input type="text" [(ngModel)]="recommended" required></ion-input>
+                          </ion-item>
+
+                        </ion-col>
+
+                      </div>
+                      Sum = {{ result }}
+
+                      </ion-row>
+
+
+                      <ion-button class="ion-margin" expand="block" (click)="adRoom()">Save</ion-button>
+
+                  </ion-card-content>
+                    </ion-card>
+
+
+              </ion-col>
+
+
+             </ion-row>
+
+
+
+    </ion-col>
+
+      </ion-row>
+      </ion-grid>
+
+
+
+      <hr class="line">
+
+
+</ion-content>
+
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
